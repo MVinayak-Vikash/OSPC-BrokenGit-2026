@@ -4,7 +4,7 @@ class TaskManager:
     def __init__(self, tasks=None):
         self.tasks = list(tasks or [])
 
-   def add(self, title):
+    def add(self, title):
         title = validate_title(title)
         new_id = max((t["id"] for t in self.tasks), default=0) + 1
         task = {"id": new_id, "title": title, "completed": False, "priority": "medium"}
